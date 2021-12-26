@@ -17,6 +17,7 @@
 .banner__title {
   font-size: 3rem;
   font-weight: normal;
+  line-height: 1.1;
   padding-bottom: 0.3rem;
   text-transform: uppercase;
   position: relative;

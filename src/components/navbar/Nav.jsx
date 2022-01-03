@@ -16,11 +16,13 @@ export default function Nav() {
 
   return (
     <div className={`nav ${show && "nav__black"}`}>
-      <img
-        src="./images/netflix-logo.png"
-        alt="netflix logo"
-        className="nav__logo"
-      />
+      <a href="/">
+        <img
+          src="./images/netflix-logo.png"
+          alt="netflix logo"
+          className="nav__logo"
+        />
+      </a>
       <img
         src="./images/netflix-avatar.png"
         alt="netflix avatar"

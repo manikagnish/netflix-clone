@@ -9,7 +9,7 @@ export default function Banner() {
   useEffect(() => {
     const fetchData = async () => {
       const res = await axios.get(
-        `http://api.themoviedb.org/3${requests.fetchNetflixOriginals}`
+        `https://api.themoviedb.org/3${requests.fetchNetflixOriginals}`
       );
       setMovie(
         res.data.results[

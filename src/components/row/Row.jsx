@@ -13,10 +13,9 @@ export default function Row({ title, fetchUrl, isLargeRow }) {
   useEffect(() => {
     const getMovies = async () => {
       const res = await axios.get(
-        `http://api.themoviedb.org/3${fetchUrl}&append_to_response=videos`
+        `https://api.themoviedb.org/3${fetchUrl}&append_to_response=videos`
       );
       setMovies(res.data.results);
-      console.log(res);
     };
     getMovies();
   }, [fetchUrl]);
@@ -30,24 +29,18 @@ export default function Row({ title, fetchUrl, isLargeRow }) {
   };
 
   const handleClick = (movie) => {
-    console.log(movie);
     if (trailerUrl) {
       setTrailerUrl("");
     } else {
       let name = movie?.name || movie?.title || movie?.original_name || "";
-      // let name = "naruto";
-      console.log("move name: ", name);
       movieTrailer(name)
         .then((url) => {
-          console.log("url: ", url);
           const urlParams = new URLSearchParams(new URL(url).search);
           setTrailerUrl(urlParams.get("v"));
         })
         .catch((err) => console.error(err));
     }
   };
-
-  console.log(trailerUrl);
 
   return (
     <div className="row">
